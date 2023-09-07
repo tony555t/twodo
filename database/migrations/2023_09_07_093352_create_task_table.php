@@ -13,8 +13,12 @@ class CreateTaskTable extends Migration
      */
     public function up()
     {
+        // column creation
         Schema::create('task', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->boolean('completed')->default(false);
             $table->timestamps();
         });
     }
